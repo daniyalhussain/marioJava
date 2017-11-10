@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -15,7 +16,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import src.Mario;
 import src.interfaces.Player;
 
 /**
@@ -39,6 +42,11 @@ public class Game extends JPanel implements KeyListener{
         y = frame.getY();
         setPreferredSize(new Dimension(x, y));
         setBackground(Color.decode("#8080FF"));
+       
+        //dit moet factory pattern worden
+        player = new Mario();
+        add((JLabel)player);
+        
         setFocusable(true);
         requestFocusInWindow();
         setVisible(true);
@@ -58,12 +66,10 @@ public class Game extends JPanel implements KeyListener{
 
         if (key == KeyEvent.VK_SPACE) {
             player.springen();
-            System.out.println("space");
         }
 
         if (key == KeyEvent.VK_DOWN) {
             player.bukken();
-            System.out.println("down");
         }
     }
 

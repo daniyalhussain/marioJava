@@ -25,6 +25,7 @@ public class Frame extends JFrame{
     private void initComponent(){
         setTitle("Mario the Game");
         setSize(x, y);
+        
         setResizable(false);
         setFocusable(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

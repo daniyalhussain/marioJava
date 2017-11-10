@@ -5,18 +5,18 @@
  */
 package src.interfaces;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Daniyal
  */
 public interface Player {
-    public int x = 0;
-    public int y = 0;
-    
+   
     public void springen();
     public void rechts();
     public void links();
     public void bukken();
 
-    void paintComponent();
+    void paintComponent(Graphics g);
 }
